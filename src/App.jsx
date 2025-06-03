@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
+import ItemView from './pages/ItemView';
 
 
 
@@ -20,6 +21,8 @@ export default function App() {
       
       {/* Standalone checkout (no layout) */}
       <Route path="/checkout" element={<Checkout />} />
+
+      <Route path="/product/:id" element={<ItemView />} />
     </Routes>
   );
 }

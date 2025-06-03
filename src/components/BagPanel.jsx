@@ -14,6 +14,10 @@ export default function BagPanel() {
       {/* Bag Header - Centered and larger text */}
       <div className="p-4 flex-col items-center ">
         <h2 className="font-bold text-xl text-center">Bag ({totalItems})</h2>
+    <div className="h-full w-75 bg-gray-200 z-30 flex flex-col border-0">
+      {/* Bag Header */}
+      <div className="p-4 flex justify-between items-center border-0">
+        <h2 className="font-bold text-lg">Bag ({totalItems})</h2>
         {items.length > 0 && (
           <button 
             onClick={() => dispatch(clearCart())}
@@ -26,6 +30,7 @@ export default function BagPanel() {
 
       {/* Bag Items */}
       <div className="flex-1 overflow-y-auto p-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 gap-2">
+      <div className="flex-1 overflow-y-hidden p-4 grid grid-cols-3 gap-2">
         {items.length === 0 ? (
           <>
             <p className="text-center text-gray-500 py-8 col-span-full">Your bag is empty</p>

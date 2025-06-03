@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import ItemView from './pages/ItemView';
+import ShippingInfo from "./pages/ShippingPage";
 
 
 
@@ -21,7 +22,7 @@ export default function App() {
       
       {/* Standalone checkout (no layout) */}
       <Route path="/checkout" element={<Checkout />} />
-
+<Route path="/shipping" element={<ShippingInfo />} />
       <Route path="/product/:id" element={<ItemView />} />
     </Routes>
   );

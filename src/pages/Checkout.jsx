@@ -3,6 +3,8 @@ import { FiCreditCard, FiEdit2, FiCheckCircle, FiArrowLeft } from 'react-icons/f
 import { FaStar, FaGift } from 'react-icons/fa';
 import { SiMastercard } from 'react-icons/si';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import ShippingInfo from './ShippingPage';
 
 export default function Checkout() {
   const { items } = useSelector(state => state.cart);
@@ -11,8 +13,12 @@ export default function Checkout() {
   const shipping = 5.99;
   const gst = subtotal * 0.1;
   const orderTotal = subtotal + shipping + gst;
+  const handleShip = () => {
+    navigate('/shipping'); 
+  };
+ 
 
-  const user = {
+const user = {
     name: "Johnn Maker",
     address: "123 Plae Grond Street\nVermont, California\nUnited States of America"
   };
@@ -26,7 +32,7 @@ export default function Checkout() {
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold text-lg uppercase">Shipping Address</h2>
-              <button className="text-black flex items-center">
+              <button className="text-black flex items-center" onClick={handleShip} >
                 <FiEdit2 className="mr-1" /> Change
               </button>
             </div>

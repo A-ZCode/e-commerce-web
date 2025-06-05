@@ -8,12 +8,11 @@ import {
 import { FaStar, FaGift } from 'react-icons/fa';
 import { SiMastercard } from 'react-icons/si';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import ShippingInfo from './ShippingPage';
 import Sidebar from '../components/Sidebar';
 
 export default function Checkout() {
   const { items } = useSelector((state) => state.cart);
+  const address = useSelector((state) => state.address); // ✅ Redux address
   const navigate = useNavigate();
 
   const subtotal = items.reduce(
@@ -26,11 +25,6 @@ export default function Checkout() {
 
   const handleShip = () => {
     navigate('/shipping'); 
-  };
-
-  const user = {
-    name: "Johnn Maker",
-    address: "123 Plae Grond Street\nVermont, California\nUnited States of America"
   };
 
   return (
@@ -49,19 +43,34 @@ export default function Checkout() {
                 <FiEdit2 className="mr-1" /> Change
               </button>
             </div>
-            <div className="whitespace-pre-line">
-              <p className="font-medium">{user.name}</p>
-              <p className="text-gray-600">{user.address}</p>
-            </div>
+            {address?.name ? (
+              <div className="whitespace-pre-line">
+                <p className="font-medium">{address.name}</p>
+                <p className="text-gray-600 whitespace-pre-line">
+                  {address.street}
+                  {"\n"}
+                  {address.city}, {address.state}
+                  {"\n"}
+                  {address.country}
+                </p>
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500 italic">No address added yet.</p>
+            )}
           </div>
 
           {/* Payment Method */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold text-lg uppercase">Payment Method</h2>
-              <button className="text-black flex items-center">
-                <FiEdit2 className="mr-1" /> Change
-              </button>
+                <button
+          className="text-black flex items-center"
+          onClick={() => navigate('/payment')}
+        >
+          <FiEdit2 className="mr-1" /> Change
+        </button>
+
+
             </div>
             <div className="space-y-3">
               <div className="flex items-center">
@@ -151,9 +160,16 @@ export default function Checkout() {
 
             <div className="border-t border-gray-300 my-3"></div>
 
-            <button className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition">
-              Place Your Order
-            </button>
+                      <button
+            onClick={() => {
+              alert('✅ Your order is on the way!');
+              navigate('/'); // optional: redirect to home or thank-you page
+            }}
+            className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition"
+          >
+            Place Your Order
+          </button>
+
           </div>
 
           {/* Back to Shop Button */}

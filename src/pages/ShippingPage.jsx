@@ -19,59 +19,12 @@ const ShippingPage = () => {
     e.preventDefault();
     setMessage('Information has been added');
 
-    // Optional delay for message visibility
     setTimeout(() => {
-      navigate('/checkout'); // Adjust this path to your actual checkout route
+      navigate('/checkout');
     }, 1500);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-lg space-y-4" >
-      <div>
-        <div>
-      <label htmlFor="name" className="block text-sm font-medium text-gray-700" >Shipping Name</label>
-      </div>
-      <input
-      placeholder='John Maker'
-        type="text"
-        id="name"
-        name="name"
-        value={shippingAddress.Shipping_Name}
-        onChange={handleChange}
-        required
-        className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      </div>
-      <div>
-        <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Shipping Address</label>
-      </div>
-      <input
-      placeholder='123 Plae Grond Stret'
-        type="text"
-        id="name"
-        Shipping Name="name"
-        value={shippingAddress.Shipping_Address}
-        onChange={handleChange}
-        required
-        className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      </div>
-      <div>
-        <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">City</label>
-      </div>
-      <input
-      placeholder='Vermont'
-        type="text"
-        id="name"
-        Shipping Name="name"
-        value={shippingAddress.City}
-        onChange={handleChange}
-        required
-        className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /></div>
-      <div>
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-md">
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -82,8 +35,9 @@ const ShippingPage = () => {
               name="name"
               value={address.name || ''}
               onChange={handleChange}
-              className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200 focus:outline-none"
+              className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200"
               placeholder="John Maker"
+              required
             />
           </div>
 
@@ -96,6 +50,7 @@ const ShippingPage = () => {
               onChange={handleChange}
               className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200"
               placeholder="123 Plae Grond Stret"
+              required
             />
           </div>
 
@@ -108,40 +63,11 @@ const ShippingPage = () => {
               onChange={handleChange}
               className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200"
               placeholder="Vermont"
+              required
             />
           </div>
 
           <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">State</label>
-      </div>
-      <input
-      placeholder='California'
-        type="text"
-        id="name"
-        Shipping Name="name"
-        value={shippingAddress.State}
-        onChange={handleChange}
-        required
-        className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /></div>
-      <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Country</label>
-      </div>
-      <input
-      placeholder='United States of America'
-        type="text"
-        id="name"
-        Shipping Name="name"
-        value={shippingAddress.Country}
-        onChange={handleChange}
-        required
-        className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-
-      
-<div>
-      <button type="submit" className="w-full bg-black text-white py-2 px-4 rounded-md" >Add Address</button>
-    </div>
             <label className="text-sm text-gray-600">State / Province</label>
             <input
               type="text"
@@ -150,6 +76,7 @@ const ShippingPage = () => {
               onChange={handleChange}
               className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200"
               placeholder="California"
+              required
             />
           </div>
 
@@ -162,6 +89,7 @@ const ShippingPage = () => {
               onChange={handleChange}
               className="w-full mt-1 p-3 rounded-xl shadow-sm border border-gray-200"
               placeholder="United States of America"
+              required
             />
           </div>
 

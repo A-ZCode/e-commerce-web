@@ -24,7 +24,7 @@ const initialState = {
                             With Bluetooth connectivity, you can enjoy your favorite music and podcasts without the hassle of tangled wires. The on-ear controls make it easy to adjust the volume, skip tracks, and answer calls.
                             Additionally, the battery life allows for hours of uninterrupted listening, so you can stay connected all day. These headphones are perfect for music lovers who want both convenience and quality.`,
           price: 39.99, 
-          image: '/public/products/iphone 11 red.webp' 
+          image: '/public/products/sony zx330bt.jpg' 
         },
         { 
           id: 3, 
@@ -60,7 +60,7 @@ const initialState = {
                             Its dual-camera system includes a wide and ultra-wide lens, allowing for professional-quality photos and videos. The A13 Bionic chip ensures top-tier performance, and its long-lasting battery lets you stay connected longer.
                             With iOS updates and wireless charging capability, the iPhone 11 Product RED remains a top choice for those looking for style, performance, and the opportunity to support a global cause.`,
           price: 619.99, 
-          image: '/public/products/iphone-11-red.webp' 
+          image: '/public/products/iphone 11 red.webp' 
         },
         { 
           id: 6, 
@@ -72,7 +72,7 @@ const initialState = {
                             The 6.1-inch Liquid Retina HD display provides excellent clarity and vivid colors, making media viewing a joy. The A13 Bionic chip ensures smooth performance across apps, games, and tasks, making this phone a powerhouse for daily use.
                             Water and dust resistance adds durability, and its long-lasting battery and wireless charging capability make the iPhone 11 Milky White a versatile, reliable choice.`,
           price: 619.99, 
-          image: '/public/products/iphone 11 white.webp' 
+          image: '/public/products/iphone 11 white.jpg' 
         },
         { 
           id: 7, 
@@ -84,7 +84,7 @@ const initialState = {
                             This model comes with a sophisticated dual-camera system that lets you capture incredible photos and videos, including in low-light conditions with its enhanced Night mode.
                             The Ceramic Shield front cover offers four times better drop performance, and the Super Retina XDR display brings everything to life with higher brightness and contrast. The iPhone 13 Product RED is a durable, stylish, and responsible choice for users.`,
           price: 619.99, 
-          image: '/public/products/iphone 11 red.webp' 
+          image: '/public/products/iphone 13 red.webp' 
         },
         { 
           id: 8, 
@@ -96,7 +96,7 @@ const initialState = {
                             Its new dual-camera system allows for even better low-light photos and 4K Dolby Vision video recording, making it ideal for content creators and everyday users alike.
                             Additionally, the iPhone 14 boasts crash detection, enhanced water resistance, and the latest iOS software updates, making it one of the most advanced phones in Apple's lineup. This model combines cutting-edge technology with a meaningful cause.`,
           price: 699.99, 
-          image: '/public/products/iphone 11 red.webp' 
+          image: '/public/products/iphone 14 red.webp' 
         }
       ],
     totalQuantity: 0,
@@ -111,3 +111,4 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
+

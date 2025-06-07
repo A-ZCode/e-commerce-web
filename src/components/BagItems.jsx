@@ -16,7 +16,7 @@ export default function BagItems() {
             <p className="text-gray-500 text-sm">{item.color}</p>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet...</p>
             <p className="text-green-600 text-sm mt-1">4.5/5</p>
-            <p className="font-semibold mt-1">R {item.price}</p>
+            <p className="font-semibold mt-1">$ {item.price}</p>
           </div>
 
           {/* Quantity controls */}
